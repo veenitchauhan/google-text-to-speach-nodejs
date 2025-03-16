@@ -1,0 +1,14 @@
+{
+  "name": "text-to-speech-app",
+  "version": "1.0.0",
+  "description": "A Node.js app for converting text to speech using Google Cloud TTS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "google-auth-library": "^9.7.0"
+  }
+}
