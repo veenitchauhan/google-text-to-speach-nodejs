@@ -12,10 +12,18 @@ document.addEventListener("DOMContentLoaded", async function () {
     return;
   }
 
+  const speedInput = document.getElementById("speed-input");
+  const speedValue = document.getElementById("speed-value");
+
+  speedInput.addEventListener("input", function () {
+    speedValue.textContent = speedInput.value;
+  });
+
   document
     .getElementById("convert")
     .addEventListener("click", async function () {
       let text = document.getElementById("text-input").value;
+      let speed = parseFloat(speedInput.value);
       if (!text) {
         alert("Please enter some text");
         return;
@@ -44,7 +52,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             body: JSON.stringify({
               input: { text: text },
               voice: { languageCode: "hi-IN", name: "hi-IN-Chirp3-HD-Charon" },
-              audioConfig: { audioEncoding: "MP3" },
+              audioConfig: { audioEncoding: "MP3", speakingRate: speed },
             }),
           }
         );
